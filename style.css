@@ -66,6 +66,15 @@ body {
         color: var(--text-color);
     }
     
+    .link a{
+        color: var(--text-color);   
+        opacity: 0.5;    
+    }
+
+    .link {
+    text-align: center;
+    }
+
 /*fn*/
 
 /*キャラ選択タブ*/
@@ -226,6 +235,10 @@ body {
         background: #FF3000;
     }
 
+    .reset-btn:hover .trash-lid {
+        transform: translateY(-5px) rotate(-30deg);
+    }
+
     .trash-bin {
         width: 14px;
         height: 16px;
@@ -243,6 +256,8 @@ body {
         top: -4px;
         left: -2.05px;
         border-radius: 1px;
+        transition: transform 0.2s ease;
+        transform-origin: left center;
     }
 
     .trash-lid::before {

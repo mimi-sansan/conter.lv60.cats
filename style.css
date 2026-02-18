@@ -68,7 +68,8 @@ body {
     
     .link a{
         color: var(--text-color);   
-        opacity: 0.5;    
+        opacity: 0.5;
+        font-family: sans-serif;  
     }
 
     .link {

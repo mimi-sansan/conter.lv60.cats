@@ -1,0 +1,258 @@
+/*ダークモード*/
+:root {
+    --bg-color: #ffffff;
+    --text-color: #808080;
+    --border-color: #808080;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #d1d1d1;
+        --border-color: #444444;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/*テキスト設定*/
+    h1{
+    color: var(--text-color);  
+    text-align: center;
+    font-family: 'DotGothic16', sans-serif;
+    }
+
+    .title p{
+        color: var(--text-color); 
+        text-align: center;
+        font-family: sans-serif;
+        margin-top: -28px;
+    }
+
+    h2{
+        color: var(--text-color);
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 0.8rem;
+        opacity: 0.5;
+    }
+
+    #total-area{
+    color: var(--text-color);
+    text-align: center;
+    font-family: sans-serif;
+    }
+
+    .group {
+        color: var(--text-color);
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+    .main-container{
+        color: var(--text-color);
+        text-align: center;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 8px;
+        font-family: sans-serif;
+        color: var(--text-color);
+    }
+    
+/*fn*/
+
+/*キャラ選択タブ*/
+    .main-summary {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    summary {
+        list-style: none;
+        cursor: pointer;
+        user-select: none;
+    }
+    summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .main-box {
+        margin-top: 10px;
+        padding: 20px;
+        border: 2px solid var(--border-color);
+        max-width: 500px;
+        width: 100%;
+        margin-left: auto; 
+        margin-right: auto;
+        box-sizing: border-box;
+    }
+
+    .group {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    .group-summary {
+        font-weight: bold;
+        padding: 5px 0;
+    }
+
+    .group:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+/*fn*/
+
+/*＋ボタン*/
+    .icon {
+        display: inline-block;
+        transition: all 0.3s ease;
+        width: 1.5rem;
+        text-align: center;
+        transform-origin: center;
+        transform: translateY(0px) rotate(0deg); 
+    }
+
+    .transport-icon {
+        display: inline-block;
+        transition: all 0.3s ease;
+        width: 1.5rem;
+        text-align: center;
+        transform-origin: center;
+        transform: translateY(0px) rotate(0deg); 
+    }
+
+    .main-container[open] .main-summary .icon {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    .normal-group[open] summary .icon {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    .user-info[open] .info-summary .icon {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    .normal-group[open] .summary .icon {
+        transform: translateY(0px) rotate(45deg);
+    }
+
+    .share-details[open] .transport-summary .transport-icon {
+        transform: translateY(0px) rotate(45deg);
+    }
+/*fn*/
+
+/*情報ボタン*/
+    .user-info {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        text-align: right;
+    }
+
+    .info-summary {
+        list-style: none;
+        cursor: pointer;
+        background: #FF3000;
+        color: #fff;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 4px;
+        margin-left: auto;
+        outline: none;
+    }
+
+    .info-box {
+        margin-top: 10px;
+        padding: 15px;
+        background: var(--bg-color);
+        border: 2px solid var(--border-color);
+        text-align: left;
+        width: 200px;
+        font-family: sans-serif;
+        color: var(--text-color);    
+    }
+
+    .info-box a {
+        color: var(--text-color);
+        text-decoration: underline;
+        font-family: sans-serif;
+    }
+/*fn*/
+
+/*上昇ボタン*/
+    #back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        color: var(--bg-color);
+        cursor: pointer;
+        font-family: sans-serif;
+        font-size: 20px;
+        display: none;
+        z-index: 999;
+    }
+/*fn*/
+
+/*ゴミ箱*/
+    .reset-btn {
+        background: #808080;
+        border: none;
+        border-radius: 4px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s;
+        margin: 20px auto;
+    }
+
+    .reset-btn:hover {
+        background: #FF3000;
+    }
+
+    .trash-bin {
+        width: 14px;
+        height: 16px;
+        position: relative;
+        border: 2px solid #fff;
+        border-top: none;
+        border-radius: 0 0 2px 2px;
+    }
+
+    .trash-lid {
+        width: 18px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        top: -4px;
+        left: -2.05px;
+        border-radius: 1px;
+    }
+
+    .trash-lid::before {
+        content: '';
+        width: 6px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        top: -3px;
+        left: 6px;
+        border-radius: 1px 1px 0 0;
+    }
+/*fn*/
